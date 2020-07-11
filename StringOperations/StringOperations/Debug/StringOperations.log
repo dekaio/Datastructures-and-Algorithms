@@ -1,0 +1,3 @@
+﻿  StringOperations.c
+D:\cpp_projects\StringOperations\StringOperations\StringOperations.c(6): warning C4716: 'displayString': must return a value
+  StringOperations.vcxproj -> D:\cpp_projects\StringOperations\Debug\StringOperations.exe
