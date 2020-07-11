@@ -8,7 +8,7 @@ Datastructures and algorithms in C and C++
   3. char p[7] = 'string' - Array is created in stack- takes 7 bytes in total counting '\0'
   Resources: http://c-faq.com/
 ### Some invalid operations on string in C
-  char doSomeOp(char str[]){
+  char doSomeOp(char str[]){ '\n'
   //Some operations
   return str;
   }
