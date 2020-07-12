@@ -1,0 +1,4 @@
+﻿  ArrayADToperations.cpp
+D:\cpp_projects\ArrayADToperations\ArrayADToperations\ArrayADToperations.cpp(422,12): warning C4101: 'len': unreferenced local variable
+D:\cpp_projects\ArrayADToperations\ArrayADToperations\ArrayADToperations.cpp(422,6): warning C4101: 'size': unreferenced local variable
+  ArrayADToperations.vcxproj -> D:\cpp_projects\ArrayADToperations\Debug\ArrayADToperations.exe
