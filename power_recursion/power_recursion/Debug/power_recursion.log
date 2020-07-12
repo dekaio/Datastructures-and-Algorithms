@@ -1,0 +1,3 @@
+﻿  power_recursion.c
+D:\cpp_projects\power_recursion\power_recursion\power_recursion.c(21): warning C4715: 'power2': not all control paths return a value
+  power_recursion.vcxproj -> D:\cpp_projects\power_recursion\Debug\power_recursion.exe

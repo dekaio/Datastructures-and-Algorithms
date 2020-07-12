@@ -1,0 +1,3 @@
+﻿  static_global_recursion.c
+D:\cpp_projects\static_global_recursion\static_global_recursion\static_global_recursion.c(12,6): warning C4101: 'val': unreferenced local variable
+  static_global_recursion.vcxproj -> D:\cpp_projects\static_global_recursion\Debug\static_global_recursion.exe
