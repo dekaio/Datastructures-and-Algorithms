@@ -1,0 +1,3 @@
+﻿  taylor_series.cpp
+D:\cpp_projects\taylor_series\taylor_series\taylor_series.cpp(9,13): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  taylor_series.vcxproj -> D:\cpp_projects\taylor_series\Debug\taylor_series.exe
