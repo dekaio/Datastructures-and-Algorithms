@@ -49,6 +49,22 @@ int CountWords(char str[]) {
 	}
 	return count+1;
 }
+int CheckAnagram(char str1[], char str2[]){
+    char temp[20] = {0};
+    int ch = 0;
+    for (int i=0;str1[i]!='\0';i++){
+        ch = str1[i]-97;
+        temp[ch] = temp[ch]+1;
+    }
+    for (int i=0;str2[i]!='\0';i++){
+        ch = str2[i] - 97;
+        if(temp[ch]>0){
+            temp[ch] = temp[ch]-1;
+        }
+        else return -1;
+    }
+    return 0;
+}
 int main() {
 	char val[] = "STRING Wonderful morning";
 	printf("%d",CountWords(val));
