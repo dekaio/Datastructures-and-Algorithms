@@ -65,6 +65,27 @@ int CheckAnagram(char str1[], char str2[]){
     }
     return 0;
 }
+void Perm(char s[],int k){
+    static int A[10] = {0};
+    static char Res[20];
+    int i=0;
+    if (s[k]=='\0'){
+        Res[k]='\0';
+        printf("%s\n",Res);
+    }
+    else{
+        while(s[i]!='\0'){
+            
+           if(A[i]==0){
+                Res[k]=s[i];
+                A[i]=1;
+                Perm(s,k+1);
+                A[i]=0;
+            }  
+            i++;
+        }
+    }
+}
 int main() {
 	char val[] = "STRING Wonderful morning";
 	printf("%d",CountWords(val));
