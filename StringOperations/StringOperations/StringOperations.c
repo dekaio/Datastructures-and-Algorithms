@@ -92,6 +92,19 @@ void swap(char *i, char *j){
     *i=*j;
     *j=temp;
 }
+void PermSwap(char str[],int l,int h){
+    if (l==h){
+        printf("%s\n",str);
+    }
+    else{
+        for(int i=l;i<=h;i++){
+            swap(&str[l],&str[i]);
+            PermSwap(str,l+1,h);
+            swap(&str[l],&str[i]);
+            
+        }
+    }
+}
 int main() {
 	char val[] = "STRING Wonderful morning";
 	printf("%d",CountWords(val));
