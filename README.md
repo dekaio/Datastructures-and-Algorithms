@@ -14,4 +14,17 @@ Datastructures and algorithms in C and C++
   }  
   Result: Compile time error-> Can't return str  
   Solution: Dynamically create string in doSomeOp and return a pointer to it. Else create a static string in doSomeOp and return it. But   
-  this method is not thread safe.  
+  this method is not thread safe.
+
+### Recursion, Backtracking and Brute force intuition
+TBD
+
+## SPECIAL MATRICES
+1. Diagonal Matrix
+2. Lower triangular matrix
+3. Upper triangular matrix
+4. Symmetric matrix
+5. Tridiagonal matrix
+6. Band Matrix
+7. Toeplitz matrix
+8. Sparse matrix
