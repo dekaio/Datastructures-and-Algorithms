@@ -86,6 +86,12 @@ void Perm(char s[],int k){
         }
     }
 }
+void swap(char *i, char *j){
+    char temp;
+    temp = *i;
+    *i=*j;
+    *j=temp;
+}
 int main() {
 	char val[] = "STRING Wonderful morning";
 	printf("%d",CountWords(val));
