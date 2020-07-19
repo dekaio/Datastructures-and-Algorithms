@@ -63,6 +63,35 @@ void DisplayMatrix(struct LowerTri mat){
         }
     }
 }
+int GetColMatrix(struct LowerTri mat, int i, int j){
+    int index = 0;
+    if (i>=j){
+        index = mat.size*(j-1) - j*(j-1)/2+i-1;
+        return mat.A[index];
+    }
+    else return 0;
+}
+int SetColumnMatrix(struct LowerTri *mat, int i, int j, int x){
+    int index = 0;
+    if (i>=j){
+        index = mat->size*(j-1)-j*(j-1)/2 +i-1;
+        mat->A[index] = x;
+    }
+}
+void DisplayColMatrix(struct LowerTri mat){
+    printf("\n");
+    for (int i=1;i<=mat.size;i++){
+        for (int j=1;j<=mat.size;j++){
+            if (i>=j){
+                int index = mat.size*(j-1)-(j-1)*j/2 +i-1;
+                printf("%d",mat.A[index]);
+            }
+            else{
+                printf("%d",0);
+            }
+        }
+    }
+}
 int main(){
     struct Matrix mat;
     mat.size = 4;
