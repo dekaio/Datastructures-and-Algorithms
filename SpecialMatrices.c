@@ -28,6 +28,41 @@ void display(struct Matrix mat){
         }
     }
 }
+// Lower triangular matrices
+struct LowerTri{
+    int size;
+    int *A;
+};
+void SetRowMatrix(struct LowerTri *mat, int i, int j, int x){
+    if (i>=j){
+        int index = i*(i-1)/2+j-1;
+      //  printf("%d",index);
+        mat->A[index] = x;
+    }
+}
+int GetRowMatrix(struct LowerTri mat, int i, int j){
+    int index = 0;
+    if (i>=j){
+       index = i*(i-1)/2+j-1; 
+       return mat.A[index];
+    }
+    else return 0;   
+}
+void DisplayMatrix(struct LowerTri mat){
+    printf("\n");
+    for (int i=1;i<=mat.size;i++){
+        for (int j=1;j<=mat.size;j++){
+            if (i>=j){
+                int index = i*(i-1)/2+j-1;
+                //printf("%d",index);
+                printf("%d",mat.A[index]);
+            }
+            else{
+                printf("%d",0);
+            }
+        }
+    }
+}
 int main(){
     struct Matrix mat;
     mat.size = 4;
