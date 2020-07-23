@@ -22,11 +22,11 @@ TBD
 ## SPECIAL MATRICES
 1. Diagonal Matrix
 2. Lower triangular matrix:
-    * Row major formula for setting a value: ( i*(i-1)/2 ) + j
+    * Row major formula for setting a value: ( i*(i-1)/2 ) + j - 1
     * Column major formula for setting a value: ( n*(j-1) - (j-1)*(j-2)/2 ) + i- j
 3. Upper triangular matrix
-    * Row major formula for setting a value: ( j*(j-1)/2 ) + i
-    * Column major formula for setting a value: ( n* (i-1) - (i-1)*(i-2)/2 ) + i-j   
+    * Column major formula for setting a value: ( j*(j-1)/2 ) + i - 1
+    * Row major formula for setting a value: ( n* (i-1) - (i-1)*(i-2)/2 ) + j-i   
 4. Symmetric matrix - Can be represented as either lower triangular matrix or upper triangular matrix.
 5. Tridiagonal matrix
 6. Band Matrix
