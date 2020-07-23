@@ -23,7 +23,7 @@ TBD
 1. Diagonal Matrix
 2. Lower triangular matrix
 3. Upper triangular matrix
-4. Symmetric matrix
+4. Symmetric matrix - Can be represented as either lower triangular matrix or upper triangular matrix.
 5. Tridiagonal matrix
 6. Band Matrix
 7. Toeplitz matrix
