@@ -13,7 +13,7 @@ struct Matrix{
 }
 void Generate(struct Matrix *mat, int n, int type){
     if (type==1) mat.size = n;
-    else if (type==2 || type==3) mat->size = n*(n+1)/2;
+    else if (type==2 || type==3 || type==6) mat->size = n*(n+1)/2;
     else if (type==4) mat->size=3*n-2;
     else if (type==5) mat->size = 2*n-1;
 }
@@ -27,7 +27,7 @@ void Create(struct Matrix *mat, int type);
                     scanf("%d",mat->A[i]);
                 }
             }
-            else if (type==2){
+            else if (type==2 || type==6){
                 if (i>=j){
                     index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
                     scanf("%d",mat->A[index]);
@@ -42,38 +42,232 @@ void Create(struct Matrix *mat, int type);
             else if (type==4){
                 if (i==j){
                     index = i-1;
-                    scanf("%d",A[index]);
+                    scanf("%d",mat->A[index]);
                 }
                 else if (i-j ==1){
                     index = n + i-1;
-                    scanf("%d",A[index]);
+                    scanf("%d",mat->A[index]);
                 }
                 else if (i-j== -1){
                     index = 2*n-2+j;
-                    scanf("%d",A[index]);
+                    scanf("%d",mat->A[index]);
                 }
             }
             else if (type==5){
-                
+                if (i<=){
+                    scanf("%d",mat->A[i-1]);
+                }
+                else if (j>i){
+                    scanf("%d",mat->A[n-1+j-1]);
+                }
             }
         }
     }
+void Get(struct Matrix mat, int type, int i, int j){
+    int index;
+    if (type==1){
+        if (i==j){
+            printf("%d",mat->A[i]);
+        }
+        else{
+            printf("%d",0);
+        }
+    }
+    else if (type==2 || type==6){
+        if (i>=j){
+            index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
+            printf("%d",mat->A[index]);
+        }
+        else{
+            printf("%d",0);
+        }
+    }
+     else if ( type==6){
+        if (i>=j){
+            index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
+            printf("%d",mat->A[index]);
+        }
+        else{
+            int temp = i;
+            i = j;
+            j = temp;
+            index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
+            printf("%d",mat->A[index]);
+        }
+    }
+    else if (type==3){
+        if (j>=i){
+          index = i*(i-1)/2 +j-1;
+          printf("%d",mat->A[index]);
+        }
+        else printf("%d",0)
+    }
+    else if (type==4){
+        if (i==j){
+            index = i-1;
+            printf("%d",mat->A[index]);
+        }
+        else if (i-j ==1){
+            index = n + i-1;
+            printf("%d",mat->A[index]);
+        }
+        else if (i-j== -1){
+            index = 2*n-2+j;
+            printf("%d",mat->A[index]);
+        }
+        else printf("%d",0)
+    }
+    else if (type==5){
+        if (i<=j){
+            printf("%d",mat->A[i-1]);
+        }
+        else if (j>i){
+            printf("%d",mat->A[n-1+j-1]);
+        }
+    }
+}
+void Display(struct Matrix mat, int type){
+    for (int i=0;i<mat->size;i++){
+        for (int j=0;j<mat->size;j++){
+            int index;
+            if (type==1){
+                if (i==j){
+                    printf("%d",mat->A[i]);
+                }
+                else{
+                    printf("%d",0);
+                }
+            }
+            else if (type==2 ){
+                if (i>=j){
+                    index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
+                    printf("%d",mat->A[index]);
+                }
+                else{
+                    printf("%d",0);
+                }
+            }
+             else if ( type==6){
+                if (i>=j){
+                    index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
+                    printf("%d",mat->A[index]);
+                }
+                else{
+                    int temp = i;
+                    i = j;
+                    j = temp;
+                    index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
+                    printf("%d",mat->A[index]);
+                }
+            }
+            else if (type==3){
+                if (j>=i){
+                  index = i*(i-1)/2 +j-1;
+                  printf("%d",mat->A[index]);
+                }
+                else printf("%d",0)
+            }
+            else if (type==4){
+                if (i==j){
+                    index = i-1;
+                    printf("%d",mat->A[index]);
+                }
+                else if (i-j ==1){
+                    index = n + i-1;
+                    printf("%d",mat->A[index]);
+                }
+                else if (i-j== -1){
+                    index = 2*n-2+j;
+                    printf("%d",mat->A[index]);
+                }
+                else printf("%d",0);
+            }
+            else if (type==5){
+                if (i<=j){
+                    printf("%d",mat->A[i-1]);
+                }
+                else if (j>i){
+                    printf("%d",mat->A[n-1+j-1]);
+                }
+            }
+        }
+    }
+}
+void Get(struct Matrix mat, type,i,j,val){
+    int index;
+    if (type==1){
+        if (i==j){
+            scanf("%d",mat->A[i]);
+        }
+    }
+    else if (type==2 || type==6){
+        if (i>=j){
+            index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
+            scanf("%d",mat->A[index]);
+        }
+    else if (type==3){
+        if (j>=i){
+          index = i*(i-1)/2 +j-1;
+          scanf("%d",mat->A[index]);
+        }
+    }
+    else if (type==4){
+        if (i==j){
+            index = i-1;
+            scanf,mat->A[index]);
+        }
+        else if (i-j ==1){
+            index = n + i-1;
+            scanf,mat->A[index]);
+        }
+        else if (i-j== -1){
+            index = 2*n-2+j;
+            scanf,mat->A[index]);
+        }
+    }
+    else if (type==5){
+        if (i<=j){
+            scanf("%d",mat->A[i-1]);
+        }
+        else if (j>i){
+            scanf("%d",mat->A[n-1+j-1]);
+        }
+    }
+        
+}
 int main()
 {   struct Matrix mat;
-    int type,ch,size;
-    printf("Choose the type of matrix: 1. Diagonal 2. Upper triangular 3. Lower triangular 4. Tridiagonal 5. Toeplitz ");
+    int type,ch,size,i,j;
+    printf("Choose the type of matrix: 1. Diagonal 2. Upper triangular 3. Lower triangular 4. Tridiagonal 5. Toeplitz 6.Symmetric matrix");
     scanf("%d",&type);
-    printf("1.Create 2.Set 4. Get 5.Display");
+    printf("1.Create 2.Set 3. Get 4.Display");
     scanf("%d",&ch);
     printf("\nEnter the size of the matrix: ");
     scanf("%d",&size);
     Generate(&mat, size,type);
-    int *A;
     switch(ch){
         case 1:
             {
-                
+                Create(&mat,type);
             }
+        case 2:{
+            printf("Enter the row index");
+            scanf("%d",&i);
+            printf("\nEnter the column index");
+            scanf("%d",&j);
+            printf("\nEnter the value")
+            Get(&mat, type,i,j,val);
+        }
+        case 3:{
+            printf("Enter the row index\n");
+            scanf("%d",&i);
+            printf("Enter the column index\n");
+            scanf("%d",&j);
+            Get(&mat, i,j);
+        }
+        case 4: {
+            Display(&mat, type);
+        }
     }
     return 0;
 }
