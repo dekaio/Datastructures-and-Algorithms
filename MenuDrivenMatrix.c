@@ -16,17 +16,22 @@ void Generate(struct Matrix *mat, int n, int type){
     else if (type==2 || type==3 || type==6) mat->size = n*(n+1)/2;
     else if (type==4) mat->size=3*n-2;
     else if (type==5) mat->size = 2*n-1;
+    printf("%d",mat->size);
 }
 void Create(struct Matrix *mat, int type){
     int n = mat->size;
     printf("\nEnter the elements here");
     int index;
-    for (int i=0;i<mat->size;i++){
-        for (int j=0;j<mat->size;j++){
+    for (int i=1;i<=mat->size;i++){
+        for (int j=1;j<=mat->size;j++){
             if (type==1){
-                if (i==j){
-                    scanf("%d",&mat->A[i]);
+                if (i==j && i<=mat->size){
+                    scanf("%d",&mat->A[i-1]);
                 }
+                if (i> mat->size){
+                    return;
+                }
+                
             }
             else if (type==2 || type==6){
                 if (i>=j){
@@ -70,7 +75,7 @@ void Get(struct Matrix mat, int type, int i, int j){
     int n = mat.size;
     if (type==1){
         if (i==j){
-            printf("%d",mat.A[i]);
+            printf("%d",mat.A[i-1]);
         }
         else{
             printf("%d",0);
@@ -131,12 +136,12 @@ void Get(struct Matrix mat, int type, int i, int j){
 }
 void Display(struct Matrix mat, int type){
     int n = mat.size;
-    for (int i=0;i<mat.size;i++){
-        for (int j=0;j<mat.size;j++){
+    for (int i=1;i<=mat.size;i++){
+        for (int j=1;j<=mat.size;j++){
             int index;
             if (type==1){
                 if (i==j){
-                    printf("%d",mat.A[i]);
+                    printf("%d",mat.A[i-1]);
                 }
                 else{
                     printf("%d",0);
@@ -243,15 +248,18 @@ void Set(struct Matrix *mat, int type,int i, int j,int val){
 int main()
 {   struct Matrix mat;
     int type,ch,size,i,j, val;
-    printf("Choose the type of matrix: 1. Diagonal 2. Upper triangular 3. Lower triangular 4. Tridiagonal 5. Toeplitz 6.Symmetric matrix 7.Exit");
-    scanf("%d",&type);
+    
+    
     while(type!=6){
+        printf("Choose the type of matrix: 1. Diagonal 2. Upper triangular 3. Lower triangular 4. Tridiagonal 5. Toeplitz 6.Symmetric matrix 7.Exit");
+        scanf("%d",&type);
         printf("\nEnter the size of the matrix: ");
         scanf("%d",&size);
         Generate(&mat, size,type);
-        printf("1.Create 2.Set 3. Get 4.Display 5. Exit");
-        scanf("%d",&ch);
+        
         while (ch!=6){
+            printf("1.Create 2.Set 3. Get 4.Display 5. Exit");
+            scanf("%d",&ch);
             switch(ch){
                 case 1:
                     {
