@@ -34,9 +34,10 @@ void Create(struct Matrix *mat, int type){
                 
             }
             else if (type==2 || type==6){
-                if (i>=j){
+                if (i>=j && i<=mat->size){
                     index = (n*(i-1))-((i-1)*(i-2)/2) + j-i;
                     scanf("%d",&mat->A[index]);
+                    printf("%d%d",i,j);
                 }
             }
             else if (type==3){
@@ -206,7 +207,7 @@ void Set(struct Matrix *mat, int type,int i, int j,int val){
     int index;int n = mat->size;
     if (type==1){
         if (i==j){
-            mat->A[i] = val;
+            mat->A[i-1] = val;
         }
     }
     else if (type==2 || type==6){
@@ -247,7 +248,7 @@ void Set(struct Matrix *mat, int type,int i, int j,int val){
 }
 int main()
 {   struct Matrix mat;
-    int type,ch,size,i,j, val;
+    int type,ch=0,size,i,j, val;
     
     
     while(type!=6){
@@ -256,8 +257,7 @@ int main()
         printf("\nEnter the size of the matrix: ");
         scanf("%d",&size);
         Generate(&mat, size,type);
-        
-        while (ch!=6){
+        do{
             printf("1.Create 2.Set 3. Get 4.Display 5. Exit");
             scanf("%d",&ch);
             switch(ch){
@@ -289,7 +289,7 @@ int main()
                     break;
                 }
             }
-        }
+        }while(ch!=5);
         
     }
     
