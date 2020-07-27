@@ -31,4 +31,4 @@ TBD
 5. Tridiagonal matrix
 6. Band Matrix
 7. Toeplitz matrix
-8. Sparse matrix
+8. Sparse matrix- Coordinate list, compressed sparse row
