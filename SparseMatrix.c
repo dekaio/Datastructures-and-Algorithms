@@ -59,13 +59,14 @@ struct SparseMatrix *AddMat(struct SparseMatrix *mat1, struct SparseMatrix *mat2
                 }
             else
                 {
-                mat3->ele[k] = mat1->ele[j];
+                mat3->ele[k] = mat1->ele[i];
                 mat3->ele[k++].x = mat1->ele[i++].x + mat2->ele[j++].x;
                 }
         }
     }
     for (;i<mat1->num;i++)mat3->ele[k++] = mat1->ele[i];
     for (;j<mat2->num;j++)mat3->ele[k++] = mat2->ele[j];
+    mat3->m = mat1->m; mat3->n = mat1->n;mat3->num = k;
     return mat3;
 }
 int main()
