@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 struct Element{
     int i;
     int j;
@@ -16,7 +17,7 @@ void create(struct SparseMatrix *s){
     scanf("%d%d",&s->m,&s->n);
     printf("Enter no of non zero elements");
     scanf("%d",&s->num);
-    s->ele = (int *)malloc(sizeof(int)*s->num);
+    s->ele = (struct Element*)malloc(sizeof(int)*s->num);
     for (i=0;i<s->num;i++){
         printf("Enter row index, column index and element: ");
         scanf("%d%d%d",&s->ele[i].i,&s->ele[i].j,&s->ele[i].x);
@@ -31,7 +32,9 @@ void display (struct SparseMatrix s){
                 l++;
             }
             else printf("%d",0);
+            
         }
+        printf("\n");
     }
 }
 int main()
