@@ -71,11 +71,12 @@ struct SparseMatrix *AddMat(struct SparseMatrix *mat1, struct SparseMatrix *mat2
 int main()
 {   struct SparseMatrix mat1, mat2, *mat3;
     create(&mat1);create(&mat2);
-    mat3 = AddMat(mat1, mat2);
+    mat3 = AddMat(&mat1, &mat2);
     printf("First mat\n");
     display(mat1);
-    printf("Second Mat\m");
+    printf("Second Mat\n");
     display(mat2);
+    printf("Added Mat\n");
     display(*mat3);
     return 0;
 }
