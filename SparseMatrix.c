@@ -37,7 +37,7 @@ void display (struct SparseMatrix s){
         printf("\n");
     }
 }
-void AddMat(struct SparseMatrix mat1, struct SparseMatrix mat2){
+struct SparseMatrix *AddMat(struct SparseMatrix mat1, struct SparseMatrix mat2){
     struct SparseMatrix *mat3;
     int i,j,k;
     i=j=k=0;
@@ -64,8 +64,9 @@ void AddMat(struct SparseMatrix mat1, struct SparseMatrix mat2){
                 }
         }
     }
-    printf("\n");
-    display(*mat3);
+    for (;i<mat1.num;i++)mat3->ele[k++] = mat1.ele[i];
+    for (;j<mat2.num;j++)mat3->ele[k++] = mat2.ele[j];
+   return mat3;
 }
 int main()
 {   struct SparseMatrix s;
