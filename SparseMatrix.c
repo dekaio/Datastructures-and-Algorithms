@@ -37,12 +37,12 @@ void display (struct SparseMatrix s){
         printf("\n");
     }
 }
-struct SparseMatrix *AddMat(struct SparseMatrix &mat1, struct SparseMatrix &mat2){
+struct SparseMatrix *AddMat(struct SparseMatrix *mat1, struct SparseMatrix *mat2){
     struct SparseMatrix *mat3;
     int i,j,k;
     i=j=k=0;
     mat3 = (struct SparseMatrix *)malloc(sizeof(struct SparseMatrix));
-    mat3->ele = (struct Element *)malloc((mat1.num + mat2.num)*sizeof(struct Element));
+    mat3->ele = (struct Element *)malloc((mat1->num + mat2->num)*sizeof(struct Element));
     while (i<mat1->num && j<mat2->num){
         if (mat1->ele[i].i < mat2->ele[j].i ){
             mat3->ele[k++] = mat1->ele[i++];
@@ -64,9 +64,9 @@ struct SparseMatrix *AddMat(struct SparseMatrix &mat1, struct SparseMatrix &mat2
                 }
         }
     }
-    for (;i<mat1.num;i++)mat3->ele[k++] = mat1->ele[i];
-    for (;j<mat2.num;j++)mat3->ele[k++] = mat2->ele[j];
-   return mat3;
+    for (;i<mat1->num;i++)mat3->ele[k++] = mat1->ele[i];
+    for (;j<mat2->num;j++)mat3->ele[k++] = mat2->ele[j];
+    return mat3;
 }
 int main()
 {   struct SparseMatrix mat1, mat2, *mat3;
