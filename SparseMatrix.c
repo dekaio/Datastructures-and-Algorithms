@@ -55,7 +55,7 @@ struct SparseMatrix *AddMat(struct SparseMatrix mat1, struct SparseMatrix mat2){
                 mat3->ele[k++] = mat1.ele[i++];
                 }
             else if (mat1.ele[i].j > mat2.ele[j].j){
-                mat3->ele[k++] = mat3->ele[j++];
+                mat3->ele[k++] = mat2.ele[j++];
                 }
             else
                 {
