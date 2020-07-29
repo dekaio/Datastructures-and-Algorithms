@@ -23,11 +23,20 @@ void create(struct SparseMatrix *s){
     }
 }
 void display (struct SparseMatrix s){
-    for (int i=0;i<s->)
+    int l = 0;
+    for (int i=0;i<s.m;i++){
+        for (int j=0;j<s.n;j++){
+            if (i==s.ele[l]->i && j=s.ele[l]->j){
+                printf("%d",s->ele[l]->x);
+                l++;
+            }
+            else printf("%d",0);
+        }
+    }
 }
 int main()
 {   struct SparseMatrix s;
     void create(&s);
-    
+    display(s);
     return 0;
 }
