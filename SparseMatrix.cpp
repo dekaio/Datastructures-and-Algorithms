@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 class Element{
@@ -27,14 +26,29 @@ class Sparse: public Element{
         Sparse operator+(Sparse &s);
         friend istream & operator>>(istream &is, Sparse &s);
         friend ostream & operator<<(ostream &os, Sparse &s);
+        void Display();
 };
+void Sparse::Display(){
+    int k = 0;
+    for (int i=0;i<m;i++){
+        for (int j=0;j<n;j++){
+            if(i==ele[k].i && j==ele[k].j){
+                cout<<ele[k++].x;
+            }
+            else{
+                cout<<0;
+            }
+        }
+        cout<<endl;
+    }
+}
 Sparse Sparse::operator+(Sparse &s){
     int i=0,j=0,k=0;
     //if (m!=s.m || n!=s.n){
       //  return NULL;
     //}
     Sparse *adm = new Sparse(m,n,num+s.m);
-    while(i<num && j<s.num){
+    while(i<=num && j<=s.num){
         if (ele[i].i<s.ele[j].i){
             adm->ele[k++] = ele[i++];
         }
@@ -53,12 +67,13 @@ Sparse Sparse::operator+(Sparse &s){
                 adm->ele[k++].x = ele[i++].x + s.ele[j++].x;
             }
         }
-        for (;i<num;i++)adm->ele[k++] = ele[i++];
-        for (;j<s.num;j++)adm->ele[k++] = s.ele[j++];
-        adm->num = k;
     }
+    for (;i<num;i++)adm->ele[k++] = ele[i++];
+    for (;j<s.num;j++)adm->ele[k++] = s.ele[j++];
+    adm->num = k;
     return *adm;
 }
+
 istream & operator>>(istream &is, Sparse &s){
     cout<<"Enter number of non zero elements";
     cin>>s.num;
@@ -86,8 +101,8 @@ ostream & operator<<(ostream &os, Sparse &s){
 
 int main()
 {
-    Sparse mat1(4,4,4);
-    Sparse mat2(4,4,4);
+    Sparse mat1(2,2,2);
+    Sparse mat2(2,2,2);
     cout<<"Enter matrix 1\n";
     cin>>mat1;
     cout<<"Enter matrix 2\n";
@@ -95,6 +110,10 @@ int main()
     Sparse sum = mat1+mat2;
     cout<<"First matrix"<<endl<<mat1;
     cout<<"Second matrix"<<endl<<mat2;
+    cout<<"Calling Display"<<endl;
+    sum.Display();
+    cout<<endl;
+    cout<<"Calling operator overloading"<<endl;
     cout<<sum;
     return 0;
 }
