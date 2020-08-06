@@ -32,3 +32,10 @@ TBD
 6. Band Matrix
 7. Toeplitz matrix
 8. Sparse matrix- Coordinate list, compressed sparse row
+
+## Polynomial Representation
+  ### 1. Polynomial representation
+  ### 2. Evaluation of polynomial
+  ### 3. Addition of two polynomials
+
+
