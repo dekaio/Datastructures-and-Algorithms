@@ -27,7 +27,12 @@ void CreateWithUip(){
         last->next = temp;
         last = temp;
     }
-    
+}
+void DisplayR(struct Node *node){
+    if (node){
+        printf("%d",node->data);
+        DisplayR(node->next);
+    }
 }
 int main(){
     CreateWithUip();
