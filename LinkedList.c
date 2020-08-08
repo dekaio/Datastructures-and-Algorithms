@@ -34,6 +34,12 @@ void DisplayR(struct Node *node){
         DisplayR(node->next);
     }
 }
+void DisplayTR(struct Node *node){
+    if (node){
+        DisplayR(node->next);
+        printf("%d",node->data);
+    }
+}
 int main(){
     CreateWithUip();
     printf("Displaying elements\n");
