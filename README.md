@@ -34,8 +34,14 @@ TBD
 8. Sparse matrix- Coordinate list, compressed sparse row
 
 ## Polynomial Representation
-  ### 1. Polynomial representation
-  ### 2. Evaluation of polynomial
-  ### 3. Addition of two polynomials
+  1. Polynomial representation
+  2. Evaluation of polynomial
+  3. Addition of two polynomials
 
-
+## Linked List
+### Problem with Arrays
+  1. Array size needs to be known beforehand (for both heap and stack )
+### Difference between Array and Linked list
+  1. Linked list is always created inside heap
+  2. Size can be modified
+  3. Can insert, delete elements in between.
