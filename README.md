@@ -56,3 +56,4 @@ TBD
 ***C arrays don't have an end marker.***
  * Binary Search cannot be done in linked list
  * Better use pointers for all sorts of linked list manipulations
+ * Improving linear search for LL: Transposition is not usually done because we avoid movement of nodes.
