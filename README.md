@@ -47,5 +47,5 @@ TBD
   3. Can insert, delete elements in between.
 
 ***C arrays don't have an end marker.***
-
+ * Binary Search cannot be done in linked list
 
