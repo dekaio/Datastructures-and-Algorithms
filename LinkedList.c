@@ -100,6 +100,14 @@ int MaxEle2(struct Node *node){
     }
     return max;
 }
+int RMax(struct Node *node){
+    int x;
+    if (node==NULL) return -32768;
+    else {
+        x = RMax(node->next);
+        return (x>node->data)?x:node->data;
+    }
+}
 int main(){
     CreateWithUip();
     printf("Displaying elements\n");
