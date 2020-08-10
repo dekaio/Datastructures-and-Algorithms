@@ -40,6 +40,14 @@ void DisplayTR(struct Node *node){
         printf("%d",node->data);
     }
 }
+int Count(struct Node node){
+    int c=0;
+    while (node.data !=0){
+        c++;
+        node = *node.next;
+    }
+    return c;
+}
 int main(){
     CreateWithUip();
     printf("Displaying elements\n");
