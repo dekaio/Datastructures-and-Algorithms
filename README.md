@@ -45,3 +45,7 @@ TBD
   1. Linked list is always created inside heap
   2. Size can be modified
   3. Can insert, delete elements in between.
+
+***C arrays don't have an end marker.
+
+
