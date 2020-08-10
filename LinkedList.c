@@ -120,6 +120,20 @@ struct Node *RSearch(struct Node *node, int key){
     if (key == node->data) return node;
     Search(node->next,key);
 }
+struct Node *SearchMoveToFront(struct Node *node, int key){
+    struct Node *q = NULL;
+    while(node){
+        if (node->data == key){
+            q->next = node->next;
+            node->next = first;
+            first = node;
+            return node;
+        }
+        q = node;
+        node = node->next;
+    }
+    return NULL;
+}
 int main(){
     CreateWithUip();
     printf("Displaying elements\n");
