@@ -48,6 +48,10 @@ int Count(struct Node *node){
     }
     return c;
 }
+int RCount(struct Node *node){
+    if (!node) return 0;
+    return RCount(node->next)+1;
+}
 int main(){
     CreateWithUip();
     printf("Displaying elements\n");
