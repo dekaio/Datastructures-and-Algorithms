@@ -40,6 +40,7 @@ void DisplayTR(struct Node *node){
         printf("%d",node->data);
     }
 }
+
 int Count(struct Node *node){
     int c=0;
     while (node){
@@ -51,6 +52,20 @@ int Count(struct Node *node){
 int RCount(struct Node *node){
     if (!node) return 0;
     return RCount(node->next)+1;
+}
+int Add(struct Node *node){
+    int sum = 0;
+    while (node){
+        sum += node->data;
+        node = node->next;
+    }
+    return sum;
+}
+int RAdd(struct Node *node){
+    if (!node){
+        return 0;
+    }
+    return RAdd(node->next)+node->data;
 }
 int main(){
     CreateWithUip();
