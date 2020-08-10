@@ -81,6 +81,18 @@ int RAdd(struct Node *node){
     }
     return RAdd(node->next)+node->data;
 }
+int MaxEle(struct Node *first){
+    int max;
+    if (first){
+        max = first->data;
+    }
+    struct Node *node = first->next;
+    while(node){
+        if (max<node->data) max= node->data;
+        node = node->next;
+    }
+    return max;
+}
 int main(){
     CreateWithUip();
     printf("Displaying elements\n");
