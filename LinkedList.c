@@ -108,6 +108,18 @@ int RMax(struct Node *node){
         return (x>node->data)?x:node->data;
     }
 }
+struct Node *Search(struct Node *node, int key){
+    while(node){
+        if (node->data == key) return node;
+        else node = node->next;
+    }
+    return NULL;
+}
+struct Node *RSearch(struct Node *node, int key){
+    if (node == NULL) return NULL;
+    if (key == node->data) return node;
+    Search(node->next,key);
+}
 int main(){
     CreateWithUip();
     printf("Displaying elements\n");
