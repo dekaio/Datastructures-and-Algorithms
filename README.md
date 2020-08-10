@@ -46,6 +46,6 @@ TBD
   2. Size can be modified
   3. Can insert, delete elements in between.
 
-***C arrays don't have an end marker.
+***C arrays don't have an end marker.***
 
 
