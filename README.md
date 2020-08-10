@@ -48,4 +48,4 @@ TBD
 
 ***C arrays don't have an end marker.***
  * Binary Search cannot be done in linked list
-
+ * Better use pointers for all sorts of linked list manipulations
