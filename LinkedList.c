@@ -81,14 +81,21 @@ int RAdd(struct Node *node){
     }
     return RAdd(node->next)+node->data;
 }
-int MaxEle(struct Node *first){
+int MaxEle(struct Node *node){
     int max;
-    if (first){
-        max = first->data;
+    if (node){
+        max = node->data;
     }
-    struct Node *node = first->next;
     while(node){
         if (max<node->data) max= node->data;
+        node = node->next;
+    }
+    return max;
+}
+int MaxEle2(struct Node *node){
+    int max = -32768;
+    while(node){
+        if (max<node->data) max = node->data;
         node = node->next;
     }
     return max;
