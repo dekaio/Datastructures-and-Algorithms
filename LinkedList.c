@@ -40,11 +40,11 @@ void DisplayTR(struct Node *node){
         printf("%d",node->data);
     }
 }
-int Count(struct Node node){
+int Count(struct Node *node){
     int c=0;
-    while (node.data !=0){
+    while (node){
         c++;
-        node = *node.next;
+        node = node->next;
     }
     return c;
 }
