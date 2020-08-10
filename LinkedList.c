@@ -11,6 +11,20 @@ void Display(struct Node *node){
         node = node->next;
     }
 }
+int CreateWithoutUip(int arr[], int n){
+    int i = 0;
+    struct Node *last, *temp;
+    first = (struct Node*)malloc(sizeof(struct Node));
+    first->data = arr[i++];
+    last = first;
+    while(i!= n ){
+        temp = (struct Node *)malloc(sizeof(struct Node));
+        temp->data = arr[i++];
+        temp->next = NULL;
+        last->next = temp;
+        last = temp;
+    }
+}
 void CreateWithUip(){
     int ip=1;
     struct Node *last;
