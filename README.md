@@ -19,6 +19,13 @@ Datastructures and algorithms in C and C++
 ### Recursion, Backtracking and Brute force intuition
 TBD
 
+### Searching
+* Linear Search:
+  1. Improving Linear Search:
+    * Transposition
+    * Move to header
+* Binary Search
+
 ## SPECIAL MATRICES
 1. Diagonal Matrix
 2. Lower triangular matrix:
