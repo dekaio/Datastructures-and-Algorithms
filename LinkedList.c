@@ -134,6 +134,18 @@ struct Node *SearchMoveToFront(struct Node *node, int key){
     }
     return NULL;
 }
+struct Node *RSearchMoveToFront(struct Node *node, int key){
+    static struct Node *q = NULL;
+    if (node == NULL) return NULL;
+    if (node->data == key){
+        q->next = node->next;
+        node->next = first;
+        first = node;
+        return first;
+    }
+    q = node;
+    RSearchMoveToFront(node->next, key);
+}
 int main(){
     CreateWithUip();
     printf("Displaying elements\n");
