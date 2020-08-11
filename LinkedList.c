@@ -202,6 +202,22 @@ void InsertInSorted(struct Node *node, int ele){
         new->next = node;  
     }
 }
+void DeleteNode(struct Node *first, int pos){
+    struct Node *p,*q;
+    p = first; q = NULL;
+    if (pos ==1){
+        first = first->next;
+         free(p);
+    }
+    else {
+        for (int i=1;i<pos-1&&node;i++){
+            q = p;
+            p = p->next;
+        }
+        q->next = p->next;
+        free(p);
+    }
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
