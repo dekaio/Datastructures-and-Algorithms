@@ -146,10 +146,33 @@ struct Node *RSearchMoveToFront(struct Node *node, int key){
     q = node;
     RSearchMoveToFront(node->next, key);
 }
+struct Node *Insert(struct Node *node, int index, int value){
+    struct Node *newn = (struct Node *)malloc(sizeof(struct Node));
+    newn->data = value;
+    if (index == 1){
+        newn->next = node;
+        node = newn;
+        return node;
+    }
+    else {
+        struct Node *fir = node;
+        for (int i=1;i<index-1 && node;i++){
+            node = node->next;
+        }
+        newn->next = node->next;
+        node->next = newn;
+        return fir;
+    }
+    
+}
 int main(){
-    CreateWithUip();
-    printf("Displaying elements\n");
+    int arr[5] = {5,4,3,2,9};
+    CreateWithoutUip(arr,5);
+    printf("\nDisplaying elements");
     Display(first);
+    printf("Total number of elements are%d",Count(first));
+    printf("\nThe list after insertion is:");
+    Display(Insert(first, 3,7));
     return 0;
 }
 
