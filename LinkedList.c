@@ -193,8 +193,14 @@ void InsertInSorted(struct Node *node, int ele){
         q = node;
         node = node->next;
     }
-    q->next = new;
-    new->next = node;
+    if (node == first){
+        new->next = first;
+        first = new;
+    }
+    else{
+        q->next = new;
+        new->next = node;  
+    }
 }
 int main(){
     int arr[5] = {5,4,3,2,9};
