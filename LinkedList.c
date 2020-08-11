@@ -163,7 +163,38 @@ struct Node *Insert(struct Node *node, int index, int value){
         node->next = newn;
         return fir;
     }
-    
+}
+void CreateNodeInsertFirst(int ele){
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = ele;
+    node->next = NULL;
+    if (first = NULL) first = node;
+    else{
+        node->next = first;
+        first = node;
+    }
+}
+void CreateNodeInsertLast(int ele){
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = ele;
+    node->next = NULL;
+    if (first==NULL) first=last=node;
+    else{
+        last->next = node;
+        last = node;
+    }
+}
+void InsertInSorted(struct Node *node, int ele){
+    struct Node *q;
+    struct Node *new = (struct Node *)malloc(sizeof(struct Node));
+    new->next = NULL;
+    new->data = ele;
+    while(node && ele>node->data){
+        q = node;
+        node = node->next;
+    }
+    q->next = new;
+    new->next = node;
 }
 int main(){
     int arr[5] = {5,4,3,2,9};
