@@ -243,6 +243,23 @@ int IsSorted(struct Node *p){
     }
     return 0;
 }
+void DeleteDuplicatesSorted(struct Node*p){
+    // Delete duplicate elements in a sorted list
+    struct Node *q = p;
+    if (p){
+        p = p->next;
+    }
+    while(p){
+        if (p->data != q->data){
+            q = p;
+            p = p->next;
+        }
+        else{
+            q->next = p->next;
+            free(p);
+        }
+    }
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
