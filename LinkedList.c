@@ -202,15 +202,15 @@ void InsertInSorted(struct Node *node, int ele){
         new->next = node;  
     }
 }
-void DeleteNode(struct Node *first, int pos){
+void DeleteNode(int pos){
     struct Node *p,*q;
-    p = first; q = NULL;
+    p = q = first;
     if (pos ==1){
         first = first->next;
-         free(p);
+        free(p);
     }
     else {
-        for (int i=1;i<pos-1&&node;i++){
+        for (int i=1;i<pos&&p;i++){
             q = p;
             p = p->next;
         }
