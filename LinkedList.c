@@ -203,7 +203,6 @@ void InsertInSorted(struct Node *node, int ele){
     }
 }
 void DeleteNode(int pos){
-    //Deleting a node
     struct Node *p,*q;
     p = q = first;
     if (pos ==1){
@@ -215,8 +214,10 @@ void DeleteNode(int pos){
             q = p;
             p = p->next;
         }
-        q->next = p->next;
-        free(p);
+        if (p){
+            q->next = p->next;
+            free(p);    
+        }        
     }
 }
 int main(){
