@@ -260,6 +260,21 @@ void DeleteDuplicatesSorted(struct Node*p){
         }
     }
 }
+void DeleteDuplicatesSorted2(struct Node*p){
+    //Another reduced space comp impl
+    struct Node *q = p->next;
+    while(q){
+        if (p->data != q->data){
+            p = q;
+            q = q->next;
+        }
+        else{
+            p->next = q->next;
+            free(q);
+            q = p->next;
+        }
+    }
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
