@@ -202,12 +202,18 @@ void InsertInSorted(struct Node *node, int ele){
         new->next = node;  
     }
 }
-void DeleteNode(int pos){
+int DeleteNode(int pos){
     struct Node *p,*q;
+    int x;
     p = q = first;
+    if (pos<1 || pos>Count(first)){
+        return -1;
+    }
     if (pos ==1){
+        x = first->data;
         first = first->next;
         free(p);
+        return x;
     }
     else {
         for (int i=1;i<pos&&p;i++){
@@ -215,9 +221,12 @@ void DeleteNode(int pos){
             p = p->next;
         }
         if (p){
+            x = p->data;
             q->next = p->next;
             free(p);    
-        }        
+            return x;
+        }
+        return -1;
     }
 }
 int IsSorted(struct Node *p){
