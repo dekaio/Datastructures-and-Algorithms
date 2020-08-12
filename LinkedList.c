@@ -220,6 +220,20 @@ void DeleteNode(int pos){
         }        
     }
 }
+int IsSorted(struct Node *p){
+    //Check if the array is sorted or not
+    struct Node *q = p;
+    while(p){
+        if (p->data >= q->data){
+            q = p;
+            p = p->next;
+        }
+        else{
+            return -1;
+        }
+    }
+    return 0;
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
