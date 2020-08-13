@@ -351,6 +351,16 @@ struct Node* Merging(struct Node *p, struct Node *q){
     if (q) r->next = q;
     return final;
 }
+int CheckLoop(struct Node *p){
+    //Check if the list has a loop
+    struct Node *q;
+    q = p;
+    p = p->next;
+    while(p!=q && p){
+        p = p->next;
+    }
+    return p==q?0:-1;
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
