@@ -310,6 +310,16 @@ void RReverse(struct Node *q, struct Node *p){
         p->next = q;
     }
 }
+void Concatination(struct Node *p, struct Node *q){
+    //Concatinating two linked lists
+    if (p&&q){
+        while(p->next){
+            p = p->next;
+        }
+        p->next = q;
+        q = NULL;
+    }
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
