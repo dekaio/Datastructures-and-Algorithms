@@ -301,6 +301,15 @@ void ReversingBySliding(struct Node *p){
     }
     first = q;
 }
+void RReverse(struct Node *q, struct Node *p){
+    if (!p){
+        first = q;
+    }
+    else{
+        RReverse(p,p->next);
+        p->next = q;
+    }
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
