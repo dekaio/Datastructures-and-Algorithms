@@ -290,6 +290,17 @@ void ReversingBySwapping(struct Node *p){
         p = p->next;
     }
 }
+void ReversingBySliding(struct Node *p){
+    struct Node *q,*r;
+    q = r = NULL;
+    while(p){
+        r = q;
+        q = p;
+        p = p->next;
+        q->next = r;
+    }
+    first = q;
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
