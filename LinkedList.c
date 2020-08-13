@@ -275,6 +275,21 @@ void DeleteDuplicatesSorted2(struct Node*p){
         }
     }
 }
+void ReversingBySwapping(struct Node *p){
+    // Reversing linked list by swapping
+    int *dummyA = (int *)malloc(sizeof(int)*Count(p));
+    int i=0; struct Node *q = p;
+    while(p){
+        dummyA[i++] = p->data;
+        p = p->next;
+    }
+    i--;
+    p = q;
+    while(i>=0){
+        p->data = dummyA[i--];
+        p = p->next;
+    }
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
