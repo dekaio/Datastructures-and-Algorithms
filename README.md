@@ -57,3 +57,4 @@ TBD
  * Binary Search cannot be done in linked list
  * Better use pointers for all sorts of linked list manipulations
  * Improving linear search for LL: Transposition is not usually done because we avoid much movement of nodes.
+ * Reversing a linked list: Reversal by swapping elements and sliding pointers
