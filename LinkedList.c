@@ -320,6 +320,37 @@ void Concatination(struct Node *p, struct Node *q){
         q = NULL;
     }
 }
+struct Node* Merging(struct Node *p, struct Node *q){
+    struct Node *r = NULL;
+    struct Node *final = NULL;
+    if (p->data < q->data){
+        r = final = p;
+        p = p->next;
+        r->next = NULL;
+    }
+    else{
+        r = final = q;
+        q = q->next;
+        r->next = NULL;
+    }
+    while(p&&q){
+        if (p->data < q->data){
+            r->next = p;
+            r = p;
+            p = p->next;
+            r->next = NULL;
+        }
+        else{
+            r->next = q;
+            r = q;
+            q = q->next;
+            r->next = NULL;
+        }
+    }
+    if (p) r->next = p;
+    if (q) r->next = q;
+    return final;
+}
 int main(){
     int arr[5] = {5,4,3,2,9};
     CreateWithoutUip(arr,5);
