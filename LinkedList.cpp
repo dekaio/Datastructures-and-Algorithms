@@ -1,3 +1,11 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 # include<iostream>
 using namespace std;
 class Node{
@@ -17,6 +25,32 @@ class LinkedList{
         void Delete(int index);
         int Length();
 };
+void LinkedList::Insert(int index, int ele){
+    Node *p = first;
+    Node *q = first;
+    Node *newN = new Node;
+    newN->data = ele;
+    newN->next = NULL;
+    int i=1;
+    if (index==1){
+        newN->next = first;
+        first = newN;
+    }
+    while(p){
+        if(index=i){
+            q->next= newN;
+            newN->next = p;
+            q = q->next;
+            return;
+        }
+        else{
+            i++;
+            q = p;
+            p = p->next;
+        }
+        
+    }
+}
 LinkedList::LinkedList(int A[], int n){
     Node *last = new Node;
     first = new Node;
@@ -29,7 +63,8 @@ LinkedList::LinkedList(int A[], int n){
         temp->next = NULL;
         last->next = temp;
         last = last->next;
-    }    
+    }
+    
 }
 LinkedList::~LinkedList(){
     Node *temp = first;
@@ -49,6 +84,7 @@ void LinkedList::Display(){
 int main(){
     int A[5] = {1,2,3,4,5};
     class LinkedList list(A,5);
+    list.Insert(4,2);
     list.Display();
     return 0;
 }
