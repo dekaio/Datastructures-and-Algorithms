@@ -1,11 +1,3 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 # include<iostream>
 using namespace std;
 class Node{
@@ -26,8 +18,8 @@ class LinkedList{
         int Length();
 };
 void LinkedList::Insert(int index, int ele){
-    Node *p = first;
-    Node *q = first;
+    Node *p, *q;
+    p = q = first;
     Node *newN = new Node;
     newN->data = ele;
     newN->next = NULL;
@@ -35,20 +27,17 @@ void LinkedList::Insert(int index, int ele){
     if (index==1){
         newN->next = first;
         first = newN;
+        return;
     }
     while(p){
-        if(index=i){
+        q = p;
+        p = p->next;
+        if(i == index-1){
             q->next= newN;
             newN->next = p;
-            q = q->next;
             return;
         }
-        else{
-            i++;
-            q = p;
-            p = p->next;
-        }
-        
+        i++;
     }
 }
 LinkedList::LinkedList(int A[], int n){
