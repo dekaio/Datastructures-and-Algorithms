@@ -49,6 +49,39 @@ int Count(struct Node *h){
    }while(h!=Head);
    return count;
 }
+int Insert(struct Node *h, int index, int ele){
+    struct Node *p,*q;
+    p = q = h;
+    int i=1;
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    temp->data = ele;
+    temp->next = NULL;
+    if (index == 1)
+    {
+        if (!Head){
+            Head = temp;
+            Head->next = Head;
+        }
+        else{
+             p = p->next;
+            while(p!=Head){
+                q = p;
+                p = p->next;
+            }
+        temp->next = Head;
+        Head = temp;
+        q->next = Head;  
+        }
+    }
+    else{
+        while(i<index-1){
+            p = p->next;
+            i++;
+        }
+        temp->next = p->next;
+        p->next = temp;
+    }
+}
 int main()
 {
     int A[5] = {1,2,3,4,5};
