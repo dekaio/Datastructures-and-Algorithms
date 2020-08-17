@@ -41,6 +41,14 @@ void RDisplay(struct Node *h){
     }
     flag = 0;
 }
+int Count(struct Node *h){
+   int count=0;
+   do{
+       h = h->next;
+       count++;
+   }while(h!=Head);
+   return count;
+}
 int main()
 {
     int A[5] = {1,2,3,4,5};
