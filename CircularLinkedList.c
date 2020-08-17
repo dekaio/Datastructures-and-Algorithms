@@ -1,5 +1,4 @@
 
-/******************************************************************************
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,6 +31,15 @@ void Display(){
         printf("%d\n",p->data);
         p = p->next;
     }while(p!=Head);
+}
+void RDisplay(struct Node *h){
+    static int flag = 0;
+    if (h!=Head || flag==0){
+        flag = 1;
+        printf("%d",h->data);
+        RDisplay(h->next);
+    }
+    flag = 0;
 }
 int main()
 {
