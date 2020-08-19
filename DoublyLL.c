@@ -83,6 +83,40 @@ void Delete(struct Node *p, int index){
         
     }
 }
+void Reverse1(struct Node *p){
+    int l = count(p);
+    int A[l];
+    int i  = 0;
+    while(p){
+        A[i++] = p->data;
+        p = p->next;
+    }
+    i--;
+    p = First;
+    while(p){
+        p->data = A[i--];
+        p = p->next;
+    }
+}
+void Reverse2(struct Node *p){
+    struct Node *q,*r;
+    q = r = NULL;
+    while(p){
+        r = q;
+        q = p;
+        p = p->next;
+        
+        q->next = r;
+    }
+    First = q;
+}
+void ReverseR(struct Node *p, struct Node *q){
+    if (p){
+        ReverseR(p->next, p);
+        p->next = q;
+    }
+    else First = q;
+}
 int main()
 {
     int A[5] = {1,2,3,4,5};
