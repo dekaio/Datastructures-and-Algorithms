@@ -54,6 +54,35 @@ void Insert(struct Node *p, int index, int ele){
         
     }
 }
+void Delete(struct Node *p, int index){
+    struct Node *q,*r; 
+    q = r = p;
+    if (index == 1){
+        q = p;
+        p = p->next;
+        First = p;
+        free(q);
+    }
+    else{
+        for (int i=1;i<index;i++){
+            q = p;
+            if (p){
+                p = p->next;
+            }
+        }
+        if (p->next){
+            q->next = p->next;
+            r = p->next;
+            r->prev = q;
+            free (p);
+            }
+        else{
+            q->next = NULL;
+            free(p);
+        }
+        
+    }
+}
 int main()
 {
     int A[5] = {1,2,3,4,5};
