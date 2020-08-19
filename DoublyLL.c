@@ -1,11 +1,4 @@
-/******************************************************************************
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 #include<stdlib.h>
 struct Node{
@@ -35,6 +28,30 @@ void Display(struct Node *temp){
     while(temp){
         printf("%d",temp->data);
         temp = temp->next;
+    }
+}
+void Insert(struct Node *p, int index, int ele){
+    struct Node *q, *r;
+    q  = r = p;
+    struct Node *temp = (struct Node*)malloc(sizeof(struct Node));
+    temp->data = ele;
+    if(index==1){
+        temp->next = First;
+        First = temp;
+    }
+    else{
+        for (int i=1;i<index;i++){
+            r = q;
+            if (q){
+             q = q->next;   
+            }
+        }
+        r->next = temp;
+        if(q){
+          temp->next = q;
+         q->prev = temp;  
+        }
+        
     }
 }
 int main()
