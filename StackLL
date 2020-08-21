@@ -17,29 +17,29 @@ int isEmpty(struct Stack *s){
     else return 0;
 }
 void InsertNode(struct Stack *s, struct Node *n,int index){
-    if (isEmpty(s)){
+    if (index==0){
         First = n;
         s->A = First;
     }
     else{
-        struct Node *p = First;
+        struct Node *p;
+        
+        p= First;
         while(p->next){
             p = p->next;
         }
-        p = p->next;
         p->next = n;
     }
     
 }
 void DeleteNode(int index){
-    struct Node *p,*q ,*r;p = First;r = q=NULL;
-    while(p){
-        r = q;
+    struct Node *p,*q ;p = First;q=NULL;
+    while(p->next){
         q = p;
         p = p->next;
     }
-    r->next = NULL;
-    free(q);
+    if (q) q->next = NULL;
+    free(p);
     
 }
 void Push(struct Stack *s, int ele){
@@ -62,7 +62,7 @@ void Pop(struct Stack *s){
 }
 void Display(struct Stack *s){
     while(s->A){
-        printf("%d:\n",s->A->data);
+        printf("%d\n",s->A->data);
         s->A = s->A->next;
     }
 }
@@ -102,9 +102,11 @@ int main(){
     struct Stack s;
     s.A = NULL;
     s.top = -1;
-   Push(&s, 3);Push(&s, 4);Push(&s, 10);
-   // Display(&s);
-    //Pop(&s);
-    //Display(&s);
+   Push(&s, 3);
+   Push(&s, 4);Push(&s, 10);
+    Display(&s);
+    printf("popping");
+    Pop(&s);
+    Display(&s);
     //printf("%d",stackTop(s));
 }
