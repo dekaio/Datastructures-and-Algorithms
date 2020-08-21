@@ -58,3 +58,18 @@ TBD
  * Better use pointers for all sorts of linked list manipulations
  * Improving linear search for LL: Transposition is not usually done because we avoid much movement of nodes.
  * Reversing a linked list: Reversal by swapping elements and sliding pointers
+## STACK
+ * FILO
+ * Recursion uses stack
+ ### ADT Stack
+ #### Data:
+ * Space for storing elements
+ * Top pointer
+ #### Operations:
+ * Push()
+ * Pop()
+ * Peek(index)
+ * Stacktop()
+ * isEmpty()
+ * isFull()
+ 
