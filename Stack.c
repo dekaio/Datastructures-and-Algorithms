@@ -4,44 +4,44 @@ struct Stack{
     int size;
     int *A;
     int top;
-}
-int isFull(struct Node *s){
-    if(s.top!=s->size-1){
+};
+int isFull(struct Stack *s){
+    if(s->top!=s->size-1){
         return 0;
     }
     else return 1;
 }
-int isEmpty(struct Node *s){
-    if (s.top  == -1) return 1;
+int isEmpty(struct Stack *s){
+    if (s->top  == -1) return 1;
     else return 0;
 }
 void Push(struct Stack *s, int ele){
-    if isFull(s){
-        printf("\nStack Overflow")
+    if (isFull(s)){
+        printf("\nStack Overflow");
     }
     else{
-        s.top++;
-        s->A[top] = ele; 
+        s->top++;
+        s->A[s->top] = ele; 
     }
 }
-void Pop(struct stack *s){
-    if isEmpty(s) printf("\nStack is empty");
+void Pop(struct Stack *s){
+    if (isEmpty(s)) printf("\nStack is empty");
     else{
-        s->A[top] = -1;
-        s.top--;
+        s->A[s->top] = -1;
+        s->top--;
     }
 }
 void Display(struct Stack *s){
-    for (int i=0;i<s.top;i++){
+    for (int i=0;i<s->top+1;i++){
         printf("%d",s->A[i]);
     }
 }
-int Peek(struct Stack *s, int index){
+int Peek(struct Stack s, int index){
     int i = s.top;
-    if (s.top > index){
+    if (s.top >= index){
 
-        printf("%d", s->A[i]);
-        return s->A[i];
+        printf("%d", s.A[index]);
+        return s.A[index];
     }
     else {
         return -1;
@@ -52,15 +52,16 @@ int stackTop(struct Stack s){
         return -1;
     }
     else{
-        return s->A[s.top];
+        return s.A[s.top];
     }
 }
 int main(){
-    Stack s;
+    struct Stack s;
     printf("Enter the size of the stack:\n");
-    scanf("%d",&s->size);
-    s->A = (struct Stack *)malloc(sizeof(struct Stack)*s->size);
+    scanf("%d",&s.size);
+    s.A = (int *)malloc(sizeof(struct Stack)*s.size);
     s.top = -1;
-    Push(3);
+    Push(&s, 3);Push(&s, 4);Push(&s, 10);
     Display(&s);
+    Peek(s,1);
 }
