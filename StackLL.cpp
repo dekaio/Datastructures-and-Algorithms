@@ -2,13 +2,14 @@
 #include<stdlib.h>
 class Node{
     public:
-    int x;
-    Node * next;
+    int data;
+    Node * prev = NULL;
     void Push(int);
     void Pop();
     void Display();
-    void GetTopElement();
+    int GetTopElement();
     int isEmpty();
+    int Peek(int);
 }*top = NULL;
 
 int Node::isEmpty(){
@@ -18,29 +19,22 @@ int Node::isEmpty(){
 void Node::Push(int ele){
     Node *temp = new Node;
     temp->data = ele;
-    temp->next = NULL:
+    temp->prev = NULL;
     if (isEmpty()){
         top = temp;
     }
     else{
         Node *p = top;
-        while(p->next){
-            p = p->next;
-        }
-        p->next = temp;
+        top = temp;
+        top->prev = p;
     }
 }
 void Node::Pop(){
     if (isEmpty()) return;
     else{
-        struct Node *p,*q ;p = First;q=NULL;
-        while(p->next){
-            q = p;
-            p = p->next;
-        }
-        if (q) q->next = NULL;
+        Node *p = top;
+        top = top->prev;
         delete p;
-        return; 
     }
     
 }
@@ -48,50 +42,33 @@ void Node::Display(){
     Node *p = top;
     while(p){
         printf("%d\n",p->data);
-        p = p->next;
+        p = p->prev;
     }
 }
-int GetElement(int index){
-    struct Node *p,*q;
-    p = First;q = NULL;
-    int i=1;
+int Peek(int index){
+    int i = 1 ;
+    Node *p = top;
     while(p){
         if (i == index){
             return p->data;
         }
-        else{
-            p = p->next;
-        }
+        p = p->prev;
         i++;
     }
-    return -1;
+    return 0;
 }
-int Peek(struct Stack s, int index){
-    int i = s.top;
-    if (GetElement(index)){
-        return GetElement(index);
-    }
-    else {
-        return -1;
-    }
-}
-int stackTop(struct Stack s){
-    if (s.top == -1){
+int Node::GetTopElement(){
+    if (!top){
         return -1;
     }
     else{
-        return GetElement(s.top);
+        return top->data;
     }
 }
 int main(){
-    struct Stack s;
-    s.A = NULL;
-    s.top = -1;
-   Push(&s, 3);
-   Push(&s, 4);Push(&s, 10);
-    Display(&s);
-    printf("popping");
-    Pop(&s);
-    Display(&s);
-    printf("%d",stackTop(s));
+    Node stack;
+    stack.Push(1);stack.Push(5);
+    stack.Display();
+    printf("--------");
+    printf("%d",stack.Peek(1));
 }
