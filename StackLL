@@ -40,7 +40,7 @@ void DeleteNode(int index){
     }
     if (q) q->next = NULL;
     free(p);
-    
+    return;
 }
 void Push(struct Stack *s, int ele){
     if (isFull(s)){
@@ -59,17 +59,19 @@ void Pop(struct Stack *s){
     else{
         DeleteNode(s->top);
     }
+    return;
 }
 void Display(struct Stack *s){
     while(s->A){
         printf("%d\n",s->A->data);
         s->A = s->A->next;
     }
+    s->A = First;
 }
 int GetElement(int index){
     struct Node *p,*q;
     p = First;q = NULL;
-    int i;
+    int i=1;
     while(p){
         if (i == index){
             return p->data;
@@ -108,5 +110,5 @@ int main(){
     printf("popping");
     Pop(&s);
     Display(&s);
-    //printf("%d",stackTop(s));
+    printf("%d",stackTop(s));
 }
