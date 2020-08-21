@@ -63,5 +63,7 @@ int main(){
     s.top = -1;
     Push(&s, 3);Push(&s, 4);Push(&s, 10);
     Display(&s);
-    Peek(s,1);
+    Pop(&s);
+    Display(&s);
+    printf("%d",stackTop(s));
 }
