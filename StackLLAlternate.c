@@ -47,6 +47,17 @@ void Display()
  }
  printf("\n");
 }
+int IsMatching(char A[]){
+    int i = 0;
+    while(A[i]!='\0'){
+        if (A[i]=='[') Push('[');
+        else if (A[i]==']'){
+            int ret = Pop();
+            if (ret == -1)return -1;
+        }
+        i++;
+    }
+   
 int main()
 {
  push(10);
