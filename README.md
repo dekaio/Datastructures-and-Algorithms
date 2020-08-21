@@ -72,4 +72,15 @@ TBD
  * Stacktop()
  * isEmpty()
  * isFull()
- 
+ ## Queue
+ ### Data
+ * Space for storing elements
+ * Front- for deletion
+ * Rear - for insertion
+ ### Operations
+  1. enqueue(x)
+  2. dequeue()
+  3. isEmpty()
+  4. isFull()
+  5. first()
+  6. Last()
