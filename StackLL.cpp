@@ -45,7 +45,7 @@ void Node::Display(){
         p = p->prev;
     }
 }
-int Peek(int index){
+int Node::Peek(int index){
     int i = 1 ;
     Node *p = top;
     while(p){
@@ -69,6 +69,6 @@ int main(){
     Node stack;
     stack.Push(1);stack.Push(5);
     stack.Display();
-    printf("--------");
-    printf("%d",stack.Peek(1));
+    printf("--------\n");
+    printf("%d",stack.Peek(2));
 }
