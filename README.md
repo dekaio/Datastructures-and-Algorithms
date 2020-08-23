@@ -84,3 +84,24 @@ TBD
   4. isFull()
   5. first()
   6. Last()
+## Trees
+  ### Terminology
+  Tree is a collection of nodes.
+  * Root
+  * Parent
+  * Child
+  * Siblings
+  * Descendents
+  * Ancestors
+  * Degree of a node: The number of children a node has.
+  * Internal(Non leaf, Non termial)/External nodes(Leaf nodes, Terminal nodes): Those nodes with a degree zero.
+  * Level: Starts at 1 from root
+  * Height: Starts at 0 from root
+  * Forest: A collection of trees.
+  
+  ### Binary tree
+  * Degree of a node can be 0,1 or 2.
+  ### Number of Binary trees
+  Catalan  number: The number of binary trees for n nodes.
+  T(n) = 2ncn/(n+1). There is one recursion formula as well.
+  Maximum height for n nodes = 2^n-1
