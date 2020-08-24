@@ -105,3 +105,29 @@ TBD
   Catalan  number: The number of binary trees for n nodes.
   T(n) = 2ncn/(n+1). There is one recursion formula as well.
   Maximum height for n nodes = 2^n-1
+  
+  # Sorting Techniques
+  ## Criteria for analysis
+  1. Number of comparisons
+  2. Number of swaps
+  3. Adaptive- If it's already sorted, then would take less time for sorting
+  4. Stable- Maintains the relative order of records with equal values.
+  5. Extra memory
+  ## Types of sorts
+  *Comparison based sorts
+  O(n^2)
+  1. Bubble sort
+  2. Insertion sort
+  3. Selection sort
+  O(nlogn)
+  4. Heap sort
+  5. Merge sort
+  6. Quick sort
+  7. Tree sort
+  O(n^3/2)
+  8. Shell sort
+  O(n)
+  *Index based sorts
+  9. Count sort
+  10. Bucket/Bin sort
+  11. Radix sort
