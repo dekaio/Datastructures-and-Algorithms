@@ -113,10 +113,10 @@ TBD
   3. Adaptive- If it's already sorted, then would take less time for sorting
   4. Stable- Maintains the relative order of records with equal values.
   5. Extra memory
-  ## Types of sorts
+  ## Type of sorts
   *Comparison based sorts
   O(n^2)
-  1. Bubble sort
+  1. Bubble sort- Adaptive, Stable
   2. Insertion sort
   3. Selection sort
   O(nlogn)
