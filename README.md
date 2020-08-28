@@ -117,7 +117,7 @@ TBD
   *Comparison based sorts
   O(n^2)
   1. Bubble sort- Adaptive, Stable
-  2. Insertion sort
+  2. Insertion sort - Designed for linked list
   3. Selection sort
   O(nlogn)
   4. Heap sort
