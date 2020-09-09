@@ -1,34 +1,49 @@
 #include <stdio.h>
-
-struct Queue{
-    int size;
-    int Front=-1;
-    int Rear=-1;
-    int *Q;
+#include <stdlib.h>
+struct Node{
+  int data;
+  struct Node *next;
+}*first = NULL, *rear = NULL;
+void enqueue(struct Node *q, int x){
+   if (!first){
+       q->data = x;
+       q->next = NULL;
+       rear = q;
+   }
+   else{
+    rear->next = q;
+    rear = q;
+   }
 }
-void enqueue(Queue *q, int x){
-    if (q->Rear==q->size-1){
-        printf("Queue is full");
+int dequeue(){
+    int x;
+    struct Node *temp; temp=first;
+    if(!first){
+        printf("Queue is empty!");
     }
     else{
-        q->Rear++;
-        q->Q[Rear]=x;
-    }
-}
-void dequeue(Queue *q, int x){
-    if (q->Rear==-1){
-        printf("Queue is empty")
-    }
-    else{
-        q->Q[0]= x;
+        x = rear->data;
+        while(temp->next){
+            temp=temp->next;
+        }
+        delete (rear);
+        rear = temp;
         return x;
     }
-    return -1;
+}
+void display(struct Node *q){
+    while(q){
+        printf("%d",q->data);
+        q = q->next;
+    }
 }
 int main()
 {
-    struct Queue *queue;
+    struct Node *q;
+    q = (struct Node *)malloc(sizeof(struct Node));
+    q->next = NULL;
+    enqueue(q,4);enqueue(q,2);enqueue(q,5);
+    display(q);
     printf("Hello World");
-
     return 0;
 }
