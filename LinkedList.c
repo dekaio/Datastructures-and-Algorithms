@@ -23,11 +23,6 @@ void enqueue(int x){
        first = rear = temp;
        return;
    }
-   else if (c==1){
-        first->next = temp;
-        rear = temp;
-        return;
-   }
    else{
         rear->next = temp;
         rear = temp;
@@ -42,12 +37,10 @@ int dequeue(){
         printf("Queue is empty!");
     }
     else{
-        x = rear->data;
-        while(temp->next){
-            temp=temp->next;
-        }
-        free(rear);
-        rear = temp;
+        temp = first;
+        x = first->data;
+        first = first->next;
+        free(temp);
         return x;
     }
 }
@@ -62,6 +55,9 @@ int main()
     struct Node *q;
     enqueue(4);
     enqueue(2);enqueue(5);
+    q = first;
+    display(q);
+    dequeue();
     q = first;
     display(q);
     return 0;
