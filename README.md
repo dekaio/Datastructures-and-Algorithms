@@ -107,9 +107,16 @@ TBD
   Maximum height for n nodes = 2^n-1
   ### Relationship between internal nodes and external nodes
   No. of nodes with degree 0 = No. of nodes with degree 2 + 1
-  ### Strict Binary Tree: Strictly binary- either no children or zero children
+  ### Strict Binary Tree: 
   #### Strict/ Proper/ Complete
+  Strictly binary- either no children or zero children
   #### Height vs Nodes
+  If height 'h' is given
+  Minimum nodes n =2h+1
+  Maximum nodes n=2^(h+1) - 1 
+  If 'n' nodes are given
+  Min height h=log(n+1) -1
+  Max height h=(n-1)/2
   #### Internal vs External nodes
   # Sorting Techniques
   ## Criteria for analysis
