@@ -118,6 +118,7 @@ TBD
   Min height h=log(n+1) -1
   Max height h=(n-1)/2
   #### Internal vs External nodes
+  Number of external nodes = Number of internal nodes + 1
   # Sorting Techniques
   ## Criteria for analysis
   1. Number of comparisons
