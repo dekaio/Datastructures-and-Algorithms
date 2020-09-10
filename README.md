@@ -119,6 +119,11 @@ TBD
   Max height h=(n-1)/2
   #### Internal vs External nodes
   Number of external nodes = Number of internal nodes + 1
+  ## M-ary trees (Degree of a tree is M)
+  ### What are n-ary trees
+  ### Strict n-ary tree
+  ### Height vs node
+  ### Internal vc External nodes
   # Sorting Techniques
   ## Criteria for analysis
   1. Number of comparisons
