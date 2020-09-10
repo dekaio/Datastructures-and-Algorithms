@@ -105,6 +105,8 @@ TBD
   Catalan  number: The number of binary trees for n nodes.
   T(n) = 2ncn/(n+1). There is one recursion formula as well.
   Maximum height for n nodes = 2^n-1
+  ### Relationship between internal nodes and external nodes
+  No. of nodes with degree 0 = No. of nodes with degree 2 + 1
   
   # Sorting Techniques
   ## Criteria for analysis
