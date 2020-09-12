@@ -1,4 +1,11 @@
+/******************************************************************************
 
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 #include <stdio.h>
 #include<stdlib.h>
 struct Node{
@@ -89,7 +96,7 @@ void Inorder(struct Node *p){
 void Postorder(struct Node *p){
     if(p){
         Postorder(p->lchild);
-        Postorder)p->rchild);
+        Postorder(p->rchild);
         printf("%d",p->data);
     }
 }
