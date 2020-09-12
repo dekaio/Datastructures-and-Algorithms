@@ -1,18 +1,34 @@
+/******************************************************************************
 
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 #include <stdio.h>
 #include<stdlib.h>
+struct Node{
+    struct Node *lchild;
+    struct Node *rchild;
+    int data;
+};
 struct Queue{
     int size;
     int front;
     int rear;
-    int *Q;
+    struct Node **Q;
 };
+struct Node *root=NULL;
+int isEmpty(struct Queue q){
+    return q.front==q.rear;
+}
 void create(struct Queue *q, int size){
     q->size = size;
     q->front = q->rear=0;
-    q->Q= (int *)malloc(q->size*sizeof(int));
+    q->Q= (struct Node **)malloc(q->size*sizeof(struct Node*));
 }
-void enqueue(struct Queue *q, int x){
+void enqueue(struct Queue *q, struct Node *x){
     if (q->rear-1==q->size){
         printf("Queue is full");
     }
@@ -21,7 +37,7 @@ void enqueue(struct Queue *q, int x){
     }
 }
 int dequeue(struct Queue *q){
-    int x = -1;
+    struct Node* x = NULL;
     if (q->front==q->rear){
         printf("Queue is empty");
     }
@@ -30,21 +46,50 @@ int dequeue(struct Queue *q){
     }
     return x;
 }
-void display(struct Queue *q){
-    int i=0;
-    while(i<q->rear){
-        printf("%d",q->Q[i++]);
+
+
+void createT(){
+    struct Node *p,*t;
+    int x;
+    struct Queue q;
+    create(&q,100);
+    printf("Enter root value");
+    scanf("%d",&x);
+    root = (struct Node *)malloc(sizeof(struct Node));
+    root->data=x;
+    root->lchild=root->rchild=NULL;
+    enqueue(&q,root);
+    while(!isEmpty(q)){
+        p=dequeue(&q);
+        printf("Enter left child");
+        scanf("%d",&x);
+        if(x!=-1){
+            t = (struct Node *)malloc(sizeof(struct Node));
+            t->data = x;
+            t->lchild=t->rchild=NULL;
+            p->lchild=t;
+        }
+        printf("Enter right child");
+        scanf("%d",&x);
+        if(x!=-1){
+            t = (struct Node *)malloc(sizeof(struct Node));
+            t->data=x;
+            t->lchild=t->rchild=NULL;
+            p->rchild=t;
+        }
+    }
+}
+void preorder(struct Node *p){
+    if (p){
+        printf("%d",p->data);
+        preorder(p->lchild);
+        preorder(p->rchild);
     }
 }
 int main()
 {
-    struct Queue *q = (struct Queue*)malloc(sizeof(struct Queue));
-    create(q,5);
-    enqueue(q,1);
-    enqueue(q,2);
-    display(q);
-    printf("DeletedElementis%d",dequeue(q));
-    printf("DeletedElementis%d",dequeue(q));
+    createT();
+    preorder(root);
 
     return 0;
 }
