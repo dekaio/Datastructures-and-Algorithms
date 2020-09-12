@@ -1,11 +1,4 @@
-/******************************************************************************
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
-C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 #include<stdlib.h>
 struct Node{
@@ -61,21 +54,23 @@ void createT(){
     enqueue(&q,root);
     while(!isEmpty(q)){
         p=dequeue(&q);
-        printf("Enter left child");
+        printf("Enter left child of %d",p->data);
         scanf("%d",&x);
         if(x!=-1){
             t = (struct Node *)malloc(sizeof(struct Node));
             t->data = x;
             t->lchild=t->rchild=NULL;
             p->lchild=t;
+            enqueue(&q,t);
         }
-        printf("Enter right child");
+        printf("Enter right child of %d",p->data);
         scanf("%d",&x);
         if(x!=-1){
             t = (struct Node *)malloc(sizeof(struct Node));
             t->data=x;
             t->lchild=t->rchild=NULL;
             p->rchild=t;
+            enqueue(&q,t);
         }
     }
 }
