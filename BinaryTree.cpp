@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
-
+class Node{
+  int data;
+  Node *lchild;
+  Node *rchild;
+};
 class Queue{
     private:
         int front;
@@ -10,36 +14,32 @@ class Queue{
     public:
         Queue(){front=rear=-1;size=10;Q = new Node*[size];}
         Queue(int size){front=rear=-1;this->size=size;Q=new Node*[this->size];}
-        void enqueue(Node x);
-        int dequeue();
+        void enqueue(Node *x);
+        Node* dequeue();
         void isEmpty();
-        void Display();
+        //void Display();
 };
-void Queue::enqueue(Node x){
+void Queue::enqueue(Node *x){
     if(front==rear){
         front++;
         rear++;
     }
     Q[rear++]=x;
 }
-int Queue::dequeue(){
+Node* Queue::dequeue(){
     return Q[front++];
 }
-void Queue::Display(){
-    for(int i=front;i<rear;i++){
-        cout<<Q[i]->data<<'\n';
-    }   
-}
+//void Queue::Display(){
+  //  for(int i=front;i<rear;i++){
+    //    cout<<Q[i]->data<<'\n';
+    //}   
+//}
 int Queue::isEmpty(){
     if (front==-1){
         return 1;
     }
 }
-class Node{
-  int data;
-  Node *lchild;
-  Node *rchild;
-};
+
 class Tree{
   private:
     Node *root;  
@@ -51,7 +51,7 @@ class Tree{
     void Postorder();
 };
 void Tree::CreateTree(){
-    Tree *t,*p;
+    Node *t,*p;
     Queue(100);
     int x;
     cout<<"Enter the root value";
