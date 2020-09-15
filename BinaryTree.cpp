@@ -21,6 +21,7 @@ class Queue{
         ~Queue();
         //void Display();
 };
+
 Queue::~Queue(){
     delete [] Q;
 }
@@ -57,12 +58,22 @@ class Tree{
     void Preorder(Node *);
     void Inorder(Node *);
     void Postorder(Node *);
+    friend int Count(Node *);
 };
 Tree::Tree(){
     root = NULL;
 }
 Tree::~Tree(){
     delete root;
+}
+int Count(Node *p){
+    int x,y;
+    if (p->data){
+        x = Count(p->lchild);
+        y = Count(p->rchild);
+        return x+y+1; 
+    }
+    return 0;
 }
 Node* Tree::GetRoot(){
     return root;
@@ -125,5 +136,6 @@ int main(){
     Tree t;
     t.CreateTree();
     t.Postorder(t.GetRoot());
+    Count(t.GetRoot());
     return 0;
 }
