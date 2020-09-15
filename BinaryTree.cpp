@@ -68,7 +68,7 @@ Tree::~Tree(){
     delete root;
 }
 int Tree::Count(Node *p){
-    int x=0;int y=0;
+    int x;int y;
     if (p->data){
         x = Count(p->lchild);
         y = Count(p->rchild);
@@ -99,7 +99,7 @@ void Tree::CreateTree(){
     root->data = x;
     root->lchild=root->rchild=NULL;
     q.enqueue(root);
-    while(x!=-1){
+    while(!q.isEmpty()){
         p = q.dequeue();
         cout<<"Enter left child of "<< p->data;
         cin>>x;
