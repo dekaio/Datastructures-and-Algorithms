@@ -58,8 +58,8 @@ class Tree{
     void Preorder(Node *);
     void Inorder(Node *);
     void Postorder(Node *);
-    friend int Count(Node *);
-    friend int Height(Node *);
+    int Count(Node *);
+    int Height(Node *);
 };
 Tree::Tree(){
     root = NULL;
@@ -67,7 +67,7 @@ Tree::Tree(){
 Tree::~Tree(){
     delete root;
 }
-int Count(Node *p){
+int Tree::Count(Node *p){
     int x=0;int y=0;
     if (p->data){
         x = Count(p->lchild);
@@ -76,7 +76,7 @@ int Count(Node *p){
     }
     return 0;
 }
-int Height(Node *p){
+int Tree::Height(Node *p){
     int x,y;
     if (p->data){
         x = Height(p->lchild);
@@ -147,7 +147,7 @@ int main(){
     Tree t;
     t.CreateTree();
     t.Postorder(t.GetRoot());
-    cout<<Count(t.GetRoot());
-    //cout << Height(t.GetRoot());
+    cout<<t.Count(t.GetRoot());
+    cout << t.Height(t.GetRoot());
     return 0;
 }
