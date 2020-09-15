@@ -50,7 +50,7 @@ class Tree{
   private:
     Node *root;  
   public:
-    Tree(){root=NULL;}
+    Tree();
     ~Tree();
     Node* GetRoot();
     void CreateTree();
@@ -58,6 +58,12 @@ class Tree{
     void Inorder(Node *);
     void Postorder(Node *);
 };
+Tree::Tree(){
+    root = NULL;
+}
+Tree::~Tree(){
+    delete root;
+}
 Node* Tree::GetRoot(){
     return root;
 }
@@ -71,9 +77,9 @@ void Tree::CreateTree(){
     root->data = x;
     root->lchild=root->rchild=NULL;
     q.enqueue(root);
-    while(!q.isEmpty()){
+    while(x!=-1){
         p = q.dequeue();
-        cout<<"Enter left child of "<<p;
+        cout<<"Enter left child of "<< p->data;
         cin>>x;
         if(x!=-1){
             t = new Node;
@@ -116,7 +122,7 @@ void Tree::Postorder(Node *p){
     }
 }
 int main(){
-    Tree t();
+    Tree t;
     t.CreateTree();
     t.Postorder(t.GetRoot());
     return 0;
