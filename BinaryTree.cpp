@@ -52,14 +52,18 @@ class Tree{
   public:
     Tree(){root=NULL;}
     ~Tree();
+    Node* GetRoot();
     void CreateTree();
-    void Preorder();
-    void Inorder();
-    void Postorder();
+    void Preorder(Node *);
+    void Inorder(Node *);
+    void Postorder(Node *);
 };
+Node* Tree::GetRoot(){
+    return root;
+}
 void Tree::CreateTree(){
     Node *t,*p;
-    Queue(100);
+    Queue q (100);
     int x;
     cout<<"Enter the root value";
     cin>>x;
@@ -112,8 +116,8 @@ void Tree::Postorder(Node *p){
     }
 }
 int main(){
-    Tree t = Tree();
+    Tree t();
     t.CreateTree();
-    Postorder(root);
+    t.Postorder(t.GetRoot());
     return 0;
 }
