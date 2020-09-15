@@ -1,9 +1,10 @@
 #include <iostream>
 using namespace std;
 class Node{
-  int data;
-  Node *lchild;
-  Node *rchild;
+    public:
+        int data;
+        Node *lchild;
+        Node *rchild;
 };
 class Queue{
     private:
@@ -16,7 +17,7 @@ class Queue{
         Queue(int size){front=rear=-1;this->size=size;Q=new Node*[this->size];}
         void enqueue(Node *x);
         Node* dequeue();
-        void isEmpty();
+        int isEmpty();
         ~Queue();
         //void Display();
 };
@@ -42,6 +43,7 @@ int Queue::isEmpty(){
     if (front==-1){
         return 1;
     }
+    return 0;
 }
 
 class Tree{
