@@ -17,8 +17,12 @@ class Queue{
         void enqueue(Node *x);
         Node* dequeue();
         void isEmpty();
+        ~Queue();
         //void Display();
 };
+Queue::~Queue(){
+    delete [] Q;
+}
 void Queue::enqueue(Node *x){
     if(front==rear){
         front++;
@@ -45,6 +49,7 @@ class Tree{
     Node *root;  
   public:
     Tree(){root=NULL;}
+    ~Tree();
     void CreateTree();
     void Preorder();
     void Inorder();
@@ -56,7 +61,7 @@ void Tree::CreateTree(){
     int x;
     cout<<"Enter the root value";
     cin>>x;
-    root=new Node;
+    root = new Node;
     root->data = x;
     root->lchild=root->rchild=NULL;
     q.enqueue(root);
@@ -85,13 +90,28 @@ void Tree::CreateTree(){
 }
 void Tree::Preorder( Node *p){
     if(p){
-        printf("%d",p->data);
+        cout<<p->data;
         Preorder(p->lchild);
         Preorder(p->rchild);
+    }
+}
+void Tree::Inorder(Node *p){
+    if (p){
+        Inorder(p->lchild);
+        cout<<p->data;
+        Inorder(p->rchild);
+    }
+}
+void Tree::Postorder(Node *p){
+    if (p){
+        Postorder(p->lchild);
+        Postorder(p->rchild);
+        cout<<p->data;
     }
 }
 int main(){
     Tree t = Tree();
     t.CreateTree();
+    Postorder(root);
     return 0;
 }
