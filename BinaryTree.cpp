@@ -89,7 +89,7 @@ void Tree::CreateTree(){
             p->lchild=t;
             q.enqueue(t);
         }
-        cout<<"Enter right child of"<<p;
+        cout<<"Enter right child of"<<p->data;
         cin>>x;
         if(x!=-1){
             t = new Node;
