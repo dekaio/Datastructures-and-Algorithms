@@ -124,6 +124,14 @@ TBD
   ### Strict n-ary tree
   ### Height vs node
   ### Internal vc External nodes
+  ### AVL Trees
+  ### Search trees
+  ## Heap
+Heap must be a complete binary tree - either as max heap or as min heap
+Since it is a complete binary tree, height will always be log(n)
+## Hashing techniques
+## Graphs
+## Asymptotic notations
   # Sorting Techniques
   ## Criteria for analysis
   1. Number of comparisons
@@ -131,6 +139,7 @@ TBD
   3. Adaptive- If it's already sorted, then would take less time for sorting
   4. Stable- Maintains the relative order of records with equal values.
   5. Extra memory
+  
   ## Type of sorts
   *Comparison based sorts
   O(n^2)
@@ -149,6 +158,4 @@ TBD
   9. Count sort
   10. Bucket/Bin sort
   11. Radix sort
-## Heap
-Heap must be a complete binary tree - either as max heap or as min heap
-Since it is a complete binary tree, height will always be log(n)
+
