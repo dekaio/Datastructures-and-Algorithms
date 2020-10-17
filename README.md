@@ -149,3 +149,6 @@ TBD
   9. Count sort
   10. Bucket/Bin sort
   11. Radix sort
+## Heap
+Heap must be a complete binary tree - either as max heap or as min heap
+Since it is a complete binary tree, height will always be log(n)
