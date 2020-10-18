@@ -17,6 +17,5 @@
   1. inline functions
   2. friend functions
   
-  ** Only difference between structures and class: By default members in a class are private while it's public in structure
- 
- 
+  *** Only difference between structures and class: By default members in a class are private while it's public in structure ***
+ *** Objects will consume memory only for data memebers, functions will be common for all the objects in the memory ***
