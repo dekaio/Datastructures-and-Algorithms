@@ -14,7 +14,7 @@
  4. Copy constructor: Disadvantage - If dynamic mem alloc, then both the objs would point to the same mem. Shallow copy and deep copy construcors.
  
  ### Types of functions in a class
-  1. inline functions
+  1. inline functions: Inline functions are implemented inside class
   2. friend functions
   
   ** Only difference between structures and class: By default members in a class are private while it's public in structure **   
