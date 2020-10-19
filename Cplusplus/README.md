@@ -19,3 +19,17 @@
   
   ** Only difference between structures and class: By default members in a class are private while it's public in structure **   
  ** Objects will consume memory only for data memebers, functions will be common for all the objects in the memory **
+
+### STL (Standard Template Library)
+STL has built-in classes for datastructures
+It has algorithms(searching, sorting, binary_search, reverse on containers), containers(datastructures-array,ll,stack..) and iterators
+Container classes:
+The following operations are possible for the below 5 classes: push_front(), pop_front(), push_back(), pop_back(), insert(), remove(), size(), empty(), front(), back()
+* Vector: Self managed array
+* List
+* Forward_list
+* Dequeue
+* Priority queue: Always the largest element will be deleted.
+* Stack
+* Set
+* Multiset
