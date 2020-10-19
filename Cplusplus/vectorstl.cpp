@@ -1,6 +1,8 @@
 
 #include <stdio.h>
+#include<iostream>
 #include <vector>
+using namespace std;
 int main()
 {
     //list(ll),forward_list(singly ll)
@@ -10,8 +12,10 @@ int main()
     v.push_back(48);
     v.pop_back();
     vector<int>:: iterator itr;
-    for (itr=v.begin(),itr!=v.end();itr++)
-        cout<<*itr;
+    for (itr=v.begin();itr!=v.end();itr++)
+        cout<<++*itr<<endl;
+    cout<<"using for each loop"<<endl;
+    for (int x:v) cout<<x<<endl;
 
     return 0;
 }
