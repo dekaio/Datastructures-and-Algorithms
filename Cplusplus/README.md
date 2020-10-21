@@ -39,3 +39,4 @@ The following operations are possible for the below 5 classes: push_front(), pop
 * final keyword
 * smart pointers: unique_ptr, shared_ptr, weak_ptr
 * Inclass initializer and delegation of constructors
+* ellipsis - for taking variable number of arguments in a function
