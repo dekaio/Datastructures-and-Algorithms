@@ -36,3 +36,5 @@ The following operations are possible for the below 5 classes: push_front(), pop
 ## Some properties of cpp 11
 * auto
 * decltype
+* final keyword
+* smart pointers: unique_ptr, shared_ptr, weak_ptr
