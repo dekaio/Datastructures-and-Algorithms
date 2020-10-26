@@ -13,7 +13,7 @@ class Stack{
             stk = new T[size];
         }
         void Push(T x);
-        int Pop();
+        T Pop();
 };
 template<class T>
 void Stack<T>::Push(T x){
