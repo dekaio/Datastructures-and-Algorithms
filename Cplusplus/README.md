@@ -36,6 +36,8 @@ The following operations are possible for the below 5 classes: push_front(), pop
  ### Function overloading
  ### Run time polymorphism : Function overriding
      * Virtual functions, pure virtual functions and abstract classes can be used for accessing derived class functions from a base class pointer
+     * Why virtual functions are used?    
+        To access derived class functions using a base class pointer    
 ## Some properties of cpp 11
 * auto
 * decltype
