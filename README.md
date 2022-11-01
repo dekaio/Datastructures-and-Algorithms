@@ -1,5 +1,5 @@
 # Datastructures-and-Algorithms
-Datastructures and algorithms in C and C++
+Datastructures and algorithms in C
 
 ## Strings
 ### Declaration of a string in C
